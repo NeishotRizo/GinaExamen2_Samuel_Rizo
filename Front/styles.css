@@ -1,4 +1,10 @@
 /* Paleta: azul oscuro (#0b1530), verde neón (#56ff94), blanco (#fff) */
+/* COLORES BASE */
+:root {
+  --azul: #0b1530;
+  --verde: #56ff94;
+  --blanco: #fff;
+}
 
 * {
   margin: 0;
@@ -8,87 +14,137 @@
 }
 
 body {
-  background: #0b1530;
-  color: white;
+  background-color: var(--azul);
+  color: var(--blanco);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 20px;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid var(--verde);
+  padding: 10px 40px;
 }
 
 .logo {
-  width: 80px;
-  height: auto;
+  width: 70px;
   border-radius: 10px;
 }
 
-h1 {
-  font-size: 1.8rem;
-  color: #56ff94;
+header h1 {
+  color: var(--verde);
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--verde);
+}
+
+/* SECCIONES */
 main {
   flex: 1;
-  width: 100%;
-  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  text-align: center;
 }
 
-section {
+.section {
   display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
+  width: 90%;
+  max-width: 900px;
+  padding: 40px 0;
   animation: fadeIn 0.5s ease;
 }
 
-section.active {
-  display: flex;
+.section.active {
+  display: block;
 }
 
 h2 {
-  font-size: 1.5rem;
-  color: #56ff94;
-  margin-bottom: 10px;
+  color: var(--verde);
+  margin-bottom: 15px;
 }
 
-/* Login */
-form {
+/* INICIO */
+.hero {
+  margin-top: 50px;
+}
+
+.hero p {
+  margin: 15px 0;
+}
+
+.hero button {
+  background: var(--verde);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  color: var(--azul);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: var(--blanco);
+}
+
+/* LOGIN */
+.login-box {
+  margin-top: 30px;
+  border: 2px solid var(--verde);
+  border-radius: 15px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  width: 320px;
+  margin-inline: auto;
+}
+
+.login-box form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 300px;
+  gap: 10px;
 }
 
-input {
-  padding: 10px;
-  border: 2px solid #56ff94;
-  border-radius: 8px;
+input,
+textarea {
   background: transparent;
-  color: white;
+  border: 2px solid var(--verde);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--blanco);
   font-size: 1rem;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
-  border-color: white;
+  border-color: var(--blanco);
 }
 
 button {
-  background: #56ff94;
-  color: #0b1530;
+  background: var(--verde);
+  color: var(--azul);
   border: none;
   padding: 10px;
   border-radius: 8px;
@@ -98,8 +154,7 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background: white;
-  color: #0b1530;
+  background: var(--blanco);
 }
 
 button:disabled {
@@ -107,38 +162,51 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Certificaciones */
+/* CERTIFICACIONES */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  width: 100%;
+  margin-top: 40px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #56ff94;
+  border: 2px solid var(--verde);
   border-radius: 15px;
   padding: 20px;
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
-.card h3 {
-  color: #56ff94;
-  margin-bottom: 10px;
+/* NOSOTROS */
+#nosotros p {
+  margin: 10px 0;
+  line-height: 1.6;
 }
 
+/* CONTACTO */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 320px;
+  margin: 20px auto 0;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
   color: #9ca3af;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* ANIMACIÓN */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

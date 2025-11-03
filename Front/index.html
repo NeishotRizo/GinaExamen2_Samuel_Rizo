@@ -5,53 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeMaster Academy - Plataforma de Certificación</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.png">
+  <link rel="icon" href="logo.jpg">
 </head>
 <body>
   <header>
     <img src="images/logo.jpg" alt="CodeMaster Academy" class="logo">
     <h1>CodeMaster Academy</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#certificaciones">Certificaciones</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <!-- Sección de Login -->
-    <section id="login-section" class="active">
-      <h2>Inicia Sesión</h2>
-      <form id="login-form">
-        <input type="text" placeholder="Usuario" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
-      </form>
+    <!-- INICIO -->
+    <section id="inicio" class="section active">
+      <div class="hero">
+        <h2>Impulsa tu carrera como programador</h2>
+        <p>En CodeMaster Academy te ofrecemos certificaciones que validan tus habilidades en los lenguajes de programación más demandados del mercado.</p>
+        <button onclick="document.querySelector('#certificaciones').scrollIntoView({behavior: 'smooth'})">Ver Certificaciones</button>
+      </div>
     </section>
 
-    <!-- Sección de Certificaciones -->
-    <section id="certificaciones-section">
-      <h2>Selecciona tu Certificación</h2>
-      <div class="cards">
+    <!-- CERTIFICACIONES -->
+    <section id="certificaciones" class="section">
+      <h2>Certificaciones Disponibles</h2>
+
+      <!-- Login -->
+      <div id="login-section" class="login-box">
+        <h3>Inicia Sesión para continuar</h3>
+        <form id="login-form">
+          <input type="text" placeholder="Usuario" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+
+      <!-- Certificaciones -->
+      <div id="certificaciones-section" class="cards">
         <div class="card active">
-          <h3>Certificación en JavaScript</h3>
+          <h3>JavaScript</h3>
           <p>Evalúa tus conocimientos en JS moderno (ES6+)</p>
           <button onclick="location.href='javascript-exam.html'">Comenzar</button>
         </div>
-
         <div class="card">
-          <h3>Certificación en Python</h3>
+          <h3>Python</h3>
           <p>Próximamente disponible</p>
           <button disabled>Próximamente</button>
         </div>
-
         <div class="card">
-          <h3>Certificación en C#</h3>
+          <h3>C#</h3>
           <p>Próximamente disponible</p>
           <button disabled>Próximamente</button>
         </div>
-
         <div class="card">
-          <h3>Certificación en Java</h3>
+          <h3>Java</h3>
           <p>Próximamente disponible</p>
           <button disabled>Próximamente</button>
         </div>
       </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="section">
+      <h2>Sobre Nosotros</h2>
+      <p>CodeMaster Academy es una plataforma creada por desarrolladores para desarrolladores. Nuestra misión es impulsar el aprendizaje técnico con evaluaciones prácticas y certificaciones de nivel profesional.</p>
+      <p>Contamos con expertos certificados en tecnologías como JavaScript, Python, C# y Java, comprometidos con formar a la nueva generación de programadores.</p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <h2>Contáctanos</h2>
+      <p>¿Tienes dudas o necesitas más información? Escríbenos.</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
     </section>
   </main>
 
@@ -60,14 +95,31 @@
   </footer>
 
   <script>
+    // Navegación
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('.section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        const target = document.querySelector(link.getAttribute('href'));
+        sections.forEach(s => s.classList.remove('active'));
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Login funcional
     const loginForm = document.getElementById('login-form');
-    const loginSection = document.getElementById('login-section');
+    const loginBox = document.getElementById('login-section');
     const certSection = document.getElementById('certificaciones-section');
 
-    loginForm.addEventListener('submit', (e) => {
+    loginForm.addEventListener('submit', e => {
       e.preventDefault();
-      loginSection.classList.remove('active');
-      certSection.classList.add('active');
+      loginBox.style.display = 'none';
+      certSection.style.display = 'grid';
     });
   </script>
 </body>
