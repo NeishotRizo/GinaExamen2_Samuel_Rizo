@@ -4,7 +4,7 @@
   --azul: #0b1530;
   --verde: #56ff94;
   --blanco: #fff;
-  --rojo: #c02626;
+  --cyan: #25b3d6;
 }
 
 * {
@@ -58,7 +58,7 @@ nav a {
 /*hace que nuestra lista de secciones se ilumine de verde cuando estamos dentro de cada una*/
 nav a:hover,
 nav a.active {
-  color: var(--rojo);
+  color: var(--cyan);
 }
 
 /* SECCIONES */
@@ -267,4 +267,11 @@ footer {
 
 .result h3 {
   color: #56ff94;
+}
+
+#logbtn {
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  
 }

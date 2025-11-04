@@ -18,6 +18,7 @@
         <!-- nos lleva a las ids de de inicio, certificaciones, nosotros y contacto -->
     <nav>
       <ul>
+        <li id="logbtn"><a href="#login">Login</a></li>
         <li><a href="#inicio" class="active">Inicio</a></li>
         <li><a href="#certificaciones">Certificaciones</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
@@ -37,11 +38,8 @@
       </div>
     </section>
 
-    <!-- CERTIFICACIONES -->
-    <section id="certificaciones" class="section">
-      <h2>Certificaciones Disponibles</h2>
-
-      <!-- Login -->
+    <!-- Section de login para la parte de arriba -->
+    <section id="login" class="section">
       <div id="login-section" class="login-box">
         <h3>Inicia Sesión para continuar</h3>
         <!-- Nuestra forma para submitear el usuario y contraseña, con placeholder para dejarle el usuario de fondo a los fields-->
@@ -55,8 +53,17 @@
         </form>
       </div>
 
-      <!-- Certificaciones -->
+    </section>
+
+
+
+
+    <!-- CERTIFICACIONES -->
+    <section id="certificaciones" class="section">
+      <h2>Certificaciones Disponibles</h2>
+      <!-- Certificaciones Seccion que aparece una vez te logueas -->
       <div id="certificaciones-section" class="cards">
+        <!--  -->
         <div class="card active">
           <h3>JavaScript</h3>
           <p>Evalúa tus conocimientos en JS moderno (ES6+)</p>

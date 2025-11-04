@@ -1,3 +1,22 @@
+// ===== CONFIGURACIÓN =====
+const API_URL = 'http://localhost:3000/api';
+
+// ===== UTILIDADES =====
+// Guardar token en localStorage
+function saveToken(token) {
+  localStorage.setItem('authToken', token);
+}
+
+// Obtener token
+function getToken() {
+  return localStorage.getItem('authToken');
+}
+
+// Eliminar token
+function removeToken() {
+  localStorage.removeItem('authToken');
+}
+
 
 //Parte de validacion de usuario en la forma login
 //igualamos la constante form a el elemento que tomamos por id que es en este caso login-form
@@ -50,10 +69,14 @@ const form = document.getElementById('login-form');
         //de nuestro "Array" sections hacemos un bucle que recorra y hacemos que s= valor actual
         //esto es para ir eliminando el active de cada una de los sections y no sean visibles
         sections.forEach(s => s.classList.remove('active'));
+        //hacemos que la seccion de certificadoos no se vea
+        certSection.style.display = 'none';
         //ahora el valor de target que es el valor de href de nuestro link actual
         // que sería en por ejemplo si dimos click en certificaciones; #certificaciones entonces le añadiria la clase de active
         //haciendolo visible
         target.classList.add('active');
+        
+        certSection.style.display = 'grid';
         //Nos reposicionamos hasta el tope de la página por si el usuarioo scrolleó y dió click a una de las secciones le aplicamos 
         //behavior smooth, para que no se vea tan golpeado
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -76,6 +99,6 @@ const form = document.getElementById('login-form');
       //certificaciones disponibles
       loginBox.style.display = 'none';
       //a nuestra section de certificaciones le cambiamos el display a grid para que aparezcan disponibles las certificaciones
-      certSection.style.display = 'grid';
+      
     });
  
