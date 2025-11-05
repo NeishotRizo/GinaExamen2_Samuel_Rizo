@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/logo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   
@@ -21,8 +21,9 @@
         <!-- nos lleva a las ids de de inicio, certificaciones, nosotros y contacto -->
     <nav>
       <ul>
-        <li id="logout"><a href="#logout"></a></li>
-        <li id="logbtn"><a href="#login">Login</a></li>
+        
+        <li id="logoutbtn" class="out"><a id="logoutanch" href="#logout">Logout</a></li>
+        <li id="logbtn" class="log"><a href="#login">Login</a></li>
         <li><a href="#inicio" class="active">Inicio</a></li>
         <li><a href="#certificaciones">Certificaciones</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
@@ -32,6 +33,8 @@
   </header>
 
   <main>
+    
+
     <!-- INICIO -->
      <!-- Nuestro inicio de la página con el attajo para ir a la seccion de certificaciones -->
     <section id="inicio" class="section active">
@@ -41,6 +44,12 @@
         <button onclick="document.querySelector('#certificaciones').scrollIntoView({behavior: 'smooth'})">Ver Certificaciones</button>
       </div>
     </section>
+
+    <section id="logout" class="section">
+      <div id="logout-section" class="login-box"> 
+        <h2>Sesión cerrada</h2>
+      </div> 
+      </section>
 
     <!-- Section de login para la parte de arriba -->
     <section id="login" class="section">
@@ -71,7 +80,7 @@
       <div id="certificaciones-section" class="cards">
         <!--  -->
         <div class="card active">
-          <h3>JavaScript</h3>
+          <h3>JavaScript $15.99</h3>
           <p>Evalúa tus conocimientos en JS moderno (ES6+)</p>
           <button onclick="location.href='examen.html'">Comenzar</button>
         </div>
@@ -98,6 +107,31 @@
       <h2>Sobre Nosotros</h2>
       <p>CodeMaster Academy es una plataforma creada por desarrolladores para desarrolladores. Nuestra misión es impulsar el aprendizaje técnico con evaluaciones prácticas y certificaciones de nivel profesional.</p>
       <p>Contamos con expertos certificados en tecnologías como JavaScript, Python, C# y Java, comprometidos con formar a la nueva generación de programadores.</p>
+      <h3 id="cane">Conoce A Nuestro Equipo!</h3>
+
+      <div class="integrantes">
+
+        <div class="samuel">
+        <img class="imagenp" src="images/samuel.png" alt="">
+        <h3>Samuel Ignacio Rizo Gonzalez</h3>
+        <p class="ptes">Soy un estudiante de sistemas, y fanático de los videojuegos
+          mi meta es ser alguien que pueda resolver problemas sin complicación
+          para esto es muy importante estar aprendiendo constantemente sobre
+          las nuevas tecnologías y lenguajes.
+        </p>
+        </div>
+
+        <div class="octavio">
+        <img class="imagenp" src="images/octa.png" alt="">
+        <h3>Uriel Octavio Rudea Esquivel</h3>
+        <p class="ptes">
+          Estudiante de sistemas con pasión por la música, la tecnología y el ejercicio.
+          Me gusta mantenerme activo, aprender nuevas tecnologías y combinar creatividad con disciplina para lograr mis metas.
+        </p>
+        </div>
+
+      </div>
+      
       <p>Siguenos en nuestras redes!</p>
       <a href="https://www.instagram.com/codemaster_academy_?igsh=MW8xZnIybWZpeXN2eQ==" target="_blank" style="color:#40e464; font-size:32px;">
         <i class="fa-brands fa-instagram"></i>
@@ -118,6 +152,10 @@
         <button type="submit">Enviar mensaje</button>
       </form>
     </section>
+
+    <!-- PAGOS -->
+    
+
   </main>
 
   <footer>

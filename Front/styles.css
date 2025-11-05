@@ -221,8 +221,17 @@ footer {
 }
 
 .exam-section {
+  display: none;
+}
+
+pago-section {
+
+}
+
+.exam-section.active {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 25px;
   width: 100%;
   max-width: 800px;
@@ -232,6 +241,8 @@ footer {
   padding: 30px;
   text-align: left;
 }
+
+
 
 .exam-form .question {
   margin-bottom: 20px;
@@ -275,3 +286,130 @@ footer {
   border-radius: 5px;
   
 }
+
+
+#pmensaje {
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 15px;
+}
+
+#pboton {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #00ff88;
+  border: none;
+  color: #0b132b;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pinput {
+  width: 100%;
+  margin-top: 6px;
+  border: none;
+  border-radius: 8px;
+  background: #0f192e;
+  color: #e0e0e0;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #2ecb70;
+  
+}
+
+.plabel {
+  align-items: flex-start;
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-top: 12px;
+  color: #9ae6b4;
+}
+
+#form-pago {
+  align-items: center;
+  background-color: #1c2541;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.1);
+  width: 380px;
+  text-align: center;
+  border: 1px solid #00ff88;
+}
+
+.h2p {
+  text-align: center;
+}
+
+.classpre {
+  margin-top: 10px;
+  color:#b5ccc9;
+
+}
+
+.inputpre {
+  margin-top: 20px;
+}
+
+.h3p {
+  margin-top: 10px;
+  color: #2eb3cb;
+}
+
+.integrantes{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border: #007bff;
+  border-width: 10px;
+}
+
+.imagenp {
+  width: 290px;
+  height: 350px;
+  object-fit: cover;
+
+}
+
+.octavio {
+  border-radius: 5px;
+  border: 5px solid #00ff88;
+  height: 600px;
+  max-width: 300px;
+  margin: 0 auto; 
+  
+    /* Centra el div horizontalmente */
+}
+
+.samuel {
+  border-radius: 5px;
+  border: 5px solid #00ff88;
+  height: 600px;
+  max-width: 300px;
+  margin: 0 auto; 
+
+    /* Centra el div horizontalmente */
+}
+
+#cane {
+  margin-bottom: 20px;
+  color: #00ff88;
+}
+
+.out{
+  display: none;
+}
+
+.log.out{
+  display:block;
+}
+
+
+
+
+
+

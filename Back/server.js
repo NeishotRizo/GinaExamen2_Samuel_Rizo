@@ -21,7 +21,8 @@ class Server {
             
             session: '/api/session',
             auth: '/api/auth',
-            certificado: '/api/certificado'
+            certificado: '/api/certificado',
+            /* pdf: '/api/pdf' */
         };
         //llamamos al metodo middlewares para conectar las rutas
 

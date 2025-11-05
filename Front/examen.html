@@ -7,22 +7,46 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <header>
     <img src="images/logo.jpg" alt="CodeMaster Academy" class="logo">
     <h1>CodeMaster Academy</h1>
   </header>
 
   <main>
-    <section class="exam-section active">
+    <section id="exa" class="exam-section">
       <h2>Certificación en JavaScript</h2>
       <p>Responde las siguientes preguntas. Cada una vale 1 punto.</p>
 
       <h1>🧠 Examen de JavaScript</h1>
       <div id="contenedor-preguntas"></div>
 
-      <script src="examen.js" defer></script>
+      
 
       <div id="result" class="result"></div>
+    </section>
+
+    <section id="pago" class="exam-section">
+      <h1 class="h1p">Gracias por confiar en nosotros</h1>
+      <img src="./images/logo.jpg" alt="Logo CodeMaster Academy" class="logo">
+      <h2 class="h2p">Forma de pago</h2>
+
+      <form id="form-pago">
+          <label for="nombre" class="plabel">Nombre del Titular</label>
+          <input class="pinput" type="text" id="nombre" placeholder="Ej. Nacho Rizo" required>
+
+          <label for="numero" class="plabel">Número de Tarjeta</label>
+          <input class="pinput" type="text" id="numero" maxlength="16" placeholder="1234 5678 9012 3456" required>
+
+          <label for="exp" class="plabel">Fecha de Expiración</label>
+          <input class="pinput" type="month" id="exp" required>
+
+          <label for="cvv" class="plabel">CVV</label>
+          <input class="pinput" type="password" id="cvv" maxlength="3" required>
+
+          <button id="pboton" type="submit">Pagar</button>
+          <div id="pmensaje" class="mensaje"></div>
+        </form>
     </section>
   </main>
 
@@ -31,6 +55,7 @@
   </footer>
 
   
-  </script>
+  
+  <script src="examen.js" defer></script>
 </body>
 </html>
