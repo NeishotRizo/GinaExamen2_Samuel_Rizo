@@ -224,10 +224,6 @@ footer {
   display: none;
 }
 
-pago-section {
-
-}
-
 .exam-section.active {
   display: flex;
   flex-direction: column;
